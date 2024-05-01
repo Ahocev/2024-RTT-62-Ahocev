@@ -114,6 +114,16 @@ public class Homework303_2_1 {
         // add sales tax to the subtotal to obtain the totalSale amount.
         // Be sure to format the results to two decimal places.
 
+        double coffee = 4.50;
+        double espresso = 2.50;
+        double tea = 3.25;
+        double subtotal = 3*coffee + 4*espresso + 2*tea;
+        final double SALES_TAX = .10;
+        double orderTax = subtotal*SALES_TAX;
+        double totalSale = orderTax + subtotal;
+        System.out.println(totalSale);
+
+
 
 
     }
