@@ -1,4 +1,4 @@
-package org.example;
+package org.example.PA_303_2_1;
 
 import java.text.DecimalFormat;
 

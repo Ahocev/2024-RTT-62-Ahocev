@@ -1,4 +1,4 @@
-package org.example.GLAB_302_2_1;
+package org.example.GLAB_303_2_1;
 
 public class LogicalOperatorsDemo {
     public static void main(String[] args)
