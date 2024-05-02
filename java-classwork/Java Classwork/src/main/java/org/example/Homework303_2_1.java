@@ -1,7 +1,9 @@
 package org.example;
 
-public class Homework303_2_1 {
+import java.text.DecimalFormat;
 
+public class Homework303_2_1 {
+    static final double SALES_TAX = 0.09;
     public static void main(String[] args) {
 
         // Write a program that declares two integer variables,
@@ -114,14 +116,33 @@ public class Homework303_2_1 {
         // add sales tax to the subtotal to obtain the totalSale amount.
         // Be sure to format the results to two decimal places.
 
-        double coffee = 4.50;
-        double espresso = 2.50;
-        double tea = 3.25;
-        double subtotal = 3*coffee + 4*espresso + 2*tea;
-        final double SALES_TAX = .10;
-        double orderTax = subtotal*SALES_TAX;
-        double totalSale = orderTax + subtotal;
-        System.out.println(totalSale);
+        //double coffee = 4.50;
+        //double espresso = 2.50;
+        //double tea = 3.25;
+        //double subtotal = 3*coffee + 4*espresso + 2*tea;
+        //final double SALES_TAX = .10;
+        //double orderTax = subtotal*SALES_TAX;
+        //double totalSale = orderTax + subtotal;
+        //System.out.println(totalSale);
+
+        //Eric's Solution
+
+        double coffee = 2.50;
+        double cappucino = 3.50;
+        double espresso = 4.50;
+
+        double subtotal = (coffee * 3) + (cappucino * 4) + (espresso * 2);
+        //static final double at top of code
+        //you can only define a static variable at the class level
+
+        double salesTaxAmount = subtotal * SALES_TAX;
+        double totalAmount = subtotal + salesTaxAmount;
+
+        DecimalFormat df = new DecimalFormat("0.00");
+        System.out.println("Subtotal : " + df.format(subtotal));
+        System.out.println("Sales Tax : " + df.format(salesTaxAmount));
+        System.out.println("Total Sale : " + df.format(totalAmount));
+
 
 
 
