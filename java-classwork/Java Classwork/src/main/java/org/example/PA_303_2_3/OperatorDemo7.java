@@ -6,8 +6,14 @@ public class OperatorDemo7 {
         // assigns 5 to x and 8 to y.
         int x = 5;
         int y = 8;
-        int sum = x++ + y;
+
+        int sum = y + x;
+        int sum2 = y + ++x;
+        int sum3 = y + x++;
         System.out.println(sum);
+        System.out.println(sum2);
+        System.out.println(sum3);
+        System.out.println(y + x);
         // Create another variable sum and assign the value of ++x added to y, and
         // print the result.
         // Notice the value of the sum (should be 14).
