@@ -6,15 +6,15 @@ public class EricTask {
 
         // 1) Create an int array of length 10
         //
-        //2) Initialize the array to random integers
+        // 2) Initialize the array to random integers
         //
-        //3) I want you to get the smallest integer in the array
+        // 3) I want you to get the smallest integer in the array
         //
-        //4) I want you to get the largest integer in the array
+        // 4) I want you to get the largest integer in the array
         //
-        //5) I want you to calculate the average value in the array as a double.  Average is the sum of all elements in the array divided by the length of the array
+        // 5) I want you to calculate the average value in the array as a double.  Average is the sum of all elements in the array divided by the length of the array
         //
-        //You can only use a single for loop
+        // You can only use a single for loop
 
     public static void main(String[] args) {
         int[] numbers = new int[10]; // Create an array of length 10

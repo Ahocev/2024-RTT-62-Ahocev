@@ -1,8 +1,8 @@
-package org.example.Slides_303_6;
+package org.example.Classwork_303_6_Arrays;
 
 import java.util.Arrays;
 
-public class ArrayDelete {
+public class ArrayDeleteFunction {
 
     public static int[] delete(int[] source, int deletedPosition) {
 
@@ -28,21 +28,16 @@ public class ArrayDelete {
     }
 
     public static void main(String[] args) {
-        //             0  1  2  3  4
+
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(array));
 
-        //             0  1  2  3  4
-        //             1, 2, 3, 4
         array = delete(array, 4);
         System.out.println(Arrays.toString(array));
 
-        //             0  1  2  3  4
-        //             1, 2, 3
         array = delete(array, 3);
         System.out.println(Arrays.toString(array));
 
-        // Out of Bounds (there is no position 5)
         array = delete(array, 5);
         System.out.println(Arrays.toString(array));
 
