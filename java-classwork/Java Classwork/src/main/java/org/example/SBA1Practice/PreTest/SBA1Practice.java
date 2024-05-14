@@ -1,4 +1,4 @@
-package org.example.SBA1Practice;
+package org.example.SBA1Practice.PreTest;
 
 public class SBA1Practice {
 
