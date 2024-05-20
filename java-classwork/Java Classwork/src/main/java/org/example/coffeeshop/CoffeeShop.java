@@ -2,6 +2,7 @@ package org.example.coffeeshop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 // abstracting the functionality of the main
@@ -38,12 +39,29 @@ public class CoffeeShop {
 
     }
 
+    public void printCheapProducts() {
+
+        // code filters and prints all products less than $5
+        List<Product> cheapProducts = products.stream().filter(product -> product.getPrice() < 5).collect(Collectors.toList());
+        cheapProducts.forEach(product -> System.out.println(product.getName() +"\t" + product.getPrice()));
+
+        // same function but using old style for loop
+        for ( Product product : products ) {
+            if ( product.getPrice() < 5 ) {
+                System.out.println(product.getName() + "\t" + product.getPrice());
+            }
+        }
+
+    }
+
     // print the list of products available for sale
     public void printProducts() {
         for ( int pos = 0 ; pos < products.size() ; pos++ ) {
             Product product = products.get(pos);
             System.out.println((pos+1) + ") " + product.getName() + "\t" + product.getPrice() );
         }
+
+        // products.forEach( (product) -> {System.out.println(product.getName() + "\t" + product.getPrice() );});
     }
 }
 
