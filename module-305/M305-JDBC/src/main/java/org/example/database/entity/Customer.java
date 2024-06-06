@@ -1,7 +1,9 @@
 package org.example.database.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
@@ -9,6 +11,8 @@ import java.math.BigDecimal;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "customers")
 public class Customer {
 
@@ -24,7 +28,7 @@ public class Customer {
     private String contactLastname;
 
     @Column(name = "contact_firstname")
-    private String contactFirstname;
+    private String contactFirstName;
 
     @Column(name = "phone")
     private String phone;
