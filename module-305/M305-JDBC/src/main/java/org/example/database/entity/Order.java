@@ -1,7 +1,9 @@
 package org.example.database.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -9,6 +11,8 @@ import java.util.Date;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "orders")
 public class Order {
 
@@ -21,12 +25,15 @@ public class Order {
     private Integer customerId;
 
     @Column(name = "order_date")
+    @Temporal(TemporalType.DATE)
     private Date orderDate;
 
     @Column(name = "required_date")
+    @Temporal(TemporalType.DATE)
     private Date requiredDate;
 
     @Column(name = "shipped_date")
+    @Temporal(TemporalType.DATE)
     private Date shippedDate;
 
     @Column(name = "status")
