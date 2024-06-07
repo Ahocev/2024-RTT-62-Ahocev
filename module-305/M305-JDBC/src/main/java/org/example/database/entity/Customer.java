@@ -1,16 +1,18 @@
 package org.example.database.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.query.Page;
 
+import java.awt.print.Book;
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
 @Entity
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "customers")
@@ -51,7 +53,12 @@ public class Customer {
     @Column(name = "country")
     private String country;
 
-    @Column(name = "sales_rep_employee_id")
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "sales_rep_employee_id", nullable = true)
+    private Employee employee;
+
+    @Column(name = "sales_rep_employee_id", insertable = false, updatable = false)
     private Integer salesRepEmployeeId;
 
     @Column(name = "credit_limit")
