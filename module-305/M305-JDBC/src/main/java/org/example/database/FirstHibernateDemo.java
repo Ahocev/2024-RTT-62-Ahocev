@@ -24,7 +24,7 @@ public class FirstHibernateDemo {
             newEmployee.setJobTitle("Comedian");
             newEmployee.setVacationHours(0);
 
-            EmployeeDAO.insert(newEmployee);
+            employeeDAO.insert(newEmployee);
             System.out.println("Jerry Seinfeld added to the database");
         } else {
             System.out.println("Jerry Seinfeld is already in the database");

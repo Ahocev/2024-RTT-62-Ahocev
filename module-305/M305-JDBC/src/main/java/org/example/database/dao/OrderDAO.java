@@ -1,21 +1,19 @@
 package org.example.database.dao;
 
 import org.example.database.entity.Order;
-import org.example.database.entity.Employee;
 import org.hibernate.SessionFactory;
 import jakarta.persistence.TypedQuery;
-import org.example.database.entity.Order;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
 public class OrderDAO {
 
-    public static void insert(Order order) {
+    SessionFactory factory = new Configuration().configure().buildSessionFactory();
 
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+    public void insert(Order order) {
+
         Session session = factory.openSession();
         session.getTransaction().begin();
         session.save(order);
@@ -24,9 +22,18 @@ public class OrderDAO {
 
     }
 
+    public void update(Order order) {
+
+        Session session = factory.openSession();
+        session.getTransaction().begin();
+        session.merge(order);
+        session.getTransaction().commit();
+        session.close();
+
+    }
+
     public Order findById(Integer id) {
 
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
 
         String hql = "SELECT o FROM Order o where o.id = :id";
@@ -47,7 +54,6 @@ public class OrderDAO {
     }
 
     public List<Order> findByCustomerId(Integer customerId) {
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
 
         String hql = "SELECT o FROM Order o WHERE o.customerId = :customerId";

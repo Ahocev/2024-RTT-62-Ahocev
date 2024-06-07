@@ -10,10 +10,9 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 
     public class CustomerDAO {
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+        public void insert( Customer customer ) {
 
-        public static void insert( Customer customer ) {
-
-            SessionFactory factory = new Configuration().configure().buildSessionFactory();
             Session session = factory.openSession();
 
             // begin the transaction
@@ -32,7 +31,6 @@ import java.util.List;
 
         public List<Customer> findByCustomerName(String customerName) {
 
-            SessionFactory factory = new Configuration().configure().buildSessionFactory();
             Session session = factory.openSession();
 
             String hql = "SELECT c FROM Customer c where c.customerName = :customerName";
@@ -51,7 +49,6 @@ import java.util.List;
 
         public List<Customer> findByContactFirstName(String contactFirstName) {
 
-            SessionFactory factory = new Configuration().configure().buildSessionFactory();
             Session session = factory.openSession();
 
             String hql = "SELECT c FROM Customer c where c.contactFirstName = :contactFirstName";
@@ -70,7 +67,6 @@ import java.util.List;
 
         public Customer findById(Integer id) {
 
-            SessionFactory factory = new Configuration().configure().buildSessionFactory();
             Session session = factory.openSession();
 
             String hql = "SELECT c FROM Customer c where c.id = :id";
@@ -93,7 +89,7 @@ import java.util.List;
         }
 
         public void removeDuplicates(String customerName) {
-            SessionFactory factory = new Configuration().configure().buildSessionFactory();
+
             Session session = factory.openSession();
             Transaction transaction = session.beginTransaction();
 
@@ -123,7 +119,7 @@ import java.util.List;
         }
 
         public void update(Employee employee) {
-            SessionFactory factory = new Configuration().configure().buildSessionFactory();
+
             Session session = factory.openSession();
             session.getTransaction().begin();
             session.merge(employee);

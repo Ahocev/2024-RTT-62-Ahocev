@@ -94,7 +94,6 @@ public class ProductDAO {
     }
 
     public void update(Product product) {
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
         session.getTransaction().begin();
         session.merge(product);
