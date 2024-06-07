@@ -24,6 +24,8 @@
         <!-- this is the validation for hibernate -->
         <property name="hbm2ddl.auto">validate</property>
 
+        <property name="current_session_context_class">thread</property>
+
         <mapping class="org.example.database.entity.Employee"/>
         <mapping class="org.example.database.entity.Customer"/>
         <mapping class="org.example.database.entity.Order"/>

@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Collection;
 import java.util.List;
 
     public class CustomerDAO {
@@ -121,6 +120,15 @@ import java.util.List;
             } finally {
                 session.close();
             }
+        }
+
+        public void update(Employee employee) {
+            SessionFactory factory = new Configuration().configure().buildSessionFactory();
+            Session session = factory.openSession();
+            session.getTransaction().begin();
+            session.merge(employee);
+            session.getTransaction().commit();
+            session.close();
         }
 
 }

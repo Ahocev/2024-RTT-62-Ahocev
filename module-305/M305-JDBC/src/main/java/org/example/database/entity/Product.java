@@ -1,14 +1,12 @@
 package org.example.database.entity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Setter
 @Getter
+@ToString
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,15 +33,15 @@ public class Product {
     @Column(name = "product_vendor")
     private String productVendor;
 
-    @Column(name = "product_description")
+    @Column(name = "product_description", columnDefinition = "Text")
     private String productDescription;
 
-    @Column(name = "quantity_in_stock")
-    private Short quantityInStock;
+    @Column(name = "quantity_in_stock", columnDefinition = "SMALLINT")
+    private Integer quantityInStock;
 
-    @Column(name = "buy_price")
-    private BigDecimal buyPrice;
+    @Column(name = "buy_price", columnDefinition = "DECIMAL")
+    private Double buyPrice;
 
-    @Column(name = "msrp")
-    private BigDecimal msrp;
+    @Column(name = "msrp", columnDefinition = "DECIMAL")
+    private Double msrp;
 }

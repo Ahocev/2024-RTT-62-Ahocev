@@ -3,6 +3,8 @@ package org.example.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Setter
 @Getter
 @Entity
@@ -16,6 +18,10 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // this is indicating to hibernate auto increment
     @Column(name = "id")
     private Integer id;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Customer> customers;
 
     @Column(name = "office_id")
     private Integer officeID;
