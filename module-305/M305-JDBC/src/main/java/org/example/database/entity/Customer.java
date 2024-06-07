@@ -23,6 +23,10 @@ public class Customer {
     @Column(name = "id")
     private Integer id;
 
+    @ToString.Exclude
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Order> orders;
+
     @Column(name = "customer_name")
     private String customerName;
 

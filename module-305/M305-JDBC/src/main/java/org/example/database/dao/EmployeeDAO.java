@@ -10,9 +10,10 @@ import java.util.List;
 
 public class EmployeeDAO {
 
-    public static void insert( Employee employee ) {
+    SessionFactory factory = new Configuration().configure().buildSessionFactory();
 
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+    public void insert( Employee employee ) {
+
         Session session = factory.openSession();
 
         // begin the transaction
@@ -32,7 +33,7 @@ public class EmployeeDAO {
     public List<Employee> findByFirstName(String firstName) {
 
         // prepare hibernate session
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+
         Session session = factory.openSession();
 
         // JPA query, syntax slightly diff than SQL
@@ -59,7 +60,6 @@ public class EmployeeDAO {
 
     public List<Employee> findByLastName(String lastName) {
 
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
 
         String hql = "SELECT e FROM Employee e where e.lastname = :lastname";
@@ -78,7 +78,6 @@ public class EmployeeDAO {
 
     public Employee findById(Integer id) {
 
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.openSession();
 
         String hql = "SELECT e FROM Employee e where e.id = :id";
@@ -101,7 +100,7 @@ public class EmployeeDAO {
     }
 
     public void update(Employee employee) {
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+
         Session session = factory.openSession();
         session.getTransaction().begin();
         session.merge(employee);
@@ -110,7 +109,7 @@ public class EmployeeDAO {
     }
 
     public void delete(Employee employee) {
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+
         Session session = factory.openSession();
         session.getTransaction().begin();
         session.delete(employee);

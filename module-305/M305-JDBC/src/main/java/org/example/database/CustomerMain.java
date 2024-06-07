@@ -25,7 +25,7 @@ public class CustomerMain {
             newCustomer.setPostalCode("90210");
             newCustomer.setCountry("USA");
 
-            CustomerDAO.insert(newCustomer);
+            customerDAO.insert(newCustomer);
             System.out.println("Bobby Lee added to the database");
         } else {
             System.out.println("Bobby Lee is already in the database");
