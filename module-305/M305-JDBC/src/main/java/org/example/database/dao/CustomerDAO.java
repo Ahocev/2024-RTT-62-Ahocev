@@ -118,11 +118,20 @@ import java.util.List;
             }
         }
 
-        public void update(Employee employee) {
+        public void update(Customer customer) {
 
             Session session = factory.openSession();
             session.getTransaction().begin();
-            session.merge(employee);
+            session.merge(customer);
+            session.getTransaction().commit();
+            session.close();
+        }
+
+        public void delete(Customer customer) {
+
+            Session session = factory.openSession();
+            session.getTransaction().begin();
+            session.delete(customer);
             session.getTransaction().commit();
             session.close();
         }
