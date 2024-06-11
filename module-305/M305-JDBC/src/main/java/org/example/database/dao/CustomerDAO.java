@@ -118,6 +118,7 @@ import java.util.List;
             }
         }
 
+<<<<<<< HEAD
         public void update(Customer customer) {
 
             Session session = factory.openSession();
@@ -132,6 +133,13 @@ import java.util.List;
             Session session = factory.openSession();
             session.getTransaction().begin();
             session.delete(customer);
+=======
+        public void update(Employee employee) {
+
+            Session session = factory.openSession();
+            session.getTransaction().begin();
+            session.merge(employee);
+>>>>>>> 910f05aea9f963d4ec90fe97d6b3738cb228e103
             session.getTransaction().commit();
             session.close();
         }
