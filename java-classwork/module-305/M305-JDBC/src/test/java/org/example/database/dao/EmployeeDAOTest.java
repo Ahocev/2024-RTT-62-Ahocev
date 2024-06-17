@@ -4,6 +4,8 @@ import org.example.database.entity.Employee;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.List;
 
@@ -58,15 +60,24 @@ public class EmployeeDAOTest {
 
     }
 
-    @Test
-    public void findByFirstNameTest() {
+    @ParameterizedTest
+    @CsvSource(
+            {
+                    "Leslie",
+                    "Tom",
+            }
+    )
+    public void findByFirstNameTest(String firstName) {
+
         // given/when
-        List<Employee> employees = employeeDAO.findByFirstName("Diane");
+        List<Employee> employees = employeeDAO.findByFirstName(firstName);
 
         // then
         Assertions.assertNotNull(employees);
         Assertions.assertFalse(employees.isEmpty());
-        Assertions.assertEquals("Diane", employees.get(0).getFirstname());
+        for ( Employee e : employees ) {
+            Assertions.assertEquals(firstName, e.getFirstname());
+        }
     }
 
     @Test
@@ -94,7 +105,6 @@ public class EmployeeDAOTest {
         given.setVacationHours(10);
         given.setProfileImageUrl("http://example.com/profile/testemployee");
 
-
         // when
         employeeDAO.insert(given);
 
@@ -105,10 +115,15 @@ public class EmployeeDAOTest {
         Assertions.assertEquals(given.getLastname(), actual.getLastname());
         Assertions.assertEquals(given.getEmail(), actual.getEmail());
 
-        List<Employee> employees = employeeDAO.findByFirstName("Test Employee");
-        for (Employee employee : employees) {
-            employeeDAO.delete(employee);
-        }
+        employeeDAO.delete(given);
+
+        Employee delete = employeeDAO.findById(given.getId());
+        Assertions.assertNull(delete);
+
+//        List<Employee> employees = employeeDAO.findByFirstName("Test Employee");
+//        for (Employee employee : employees) {
+//            employeeDAO.delete(employee);
+//        }
 
     }
 

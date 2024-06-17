@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1aecd09-291f-46f9-b3a6-0f3c098bd66f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../SBA306/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SBA306/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SBA306/sba-core-java-hibernate-junit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../File1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../File2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../File3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Abstract Class | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Exception Handling (Try-catch) | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Inheritance I | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Inheritance II | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Method Overriding 2 (Super Keyword) | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Method Overriding | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Stdin and Stdout I | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Stdin and Stdout II | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Strings Introduction | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/Java Substring | HackerRank.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HackerRank Uploads/KBA1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Test 2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/AD - SBA - SQL - Schooldatabase.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/GLAB 303.5.1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/GLAB 304.4.1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/GLAB 304.5.2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/GLAB 304.6.1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/GLAB 304.6.2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/Homework 1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/KBA MySQL.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/New Table.mwb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/PA 304.4.1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/SBA1 Practice.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/SQL SBA2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/SQL-examples.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/classic models.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/classicmodels-before-content-team.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module-304/examples.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/JDBCDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/AddProductToOrderMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/CustomerMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/FirstHibernateDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/NewCustomerMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/ProductMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/dao/CustomerDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/dao/EmployeeDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/dao/OrderDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/dao/OrderDetailDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/dao/ProductDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/entity/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/entity/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/entity/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/entity/OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/database/entity/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/database/dao/CustomerDAOTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/database/dao/EmployeeDAOTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2hNWhfJ4F3pijSpoqfbK0fAS5Mz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AddProductToOrder.executor": "Run",
+    "Application.AddProductToOrderMain.executor": "Run",
+    "Application.CustomerMain.executor": "Run",
+    "Application.FirstHibernateDemo.executor": "Run",
+    "Application.JDBCDemo.executor": "Run",
+    "Application.NewCustomerMain.executor": "Run",
+    "Application.ProductMain.executor": "Run",
+    "JUnit.CustomerDAOTest.createNewCustomer.executor": "Run",
+    "JUnit.CustomerDAOTest.executor": "Run",
+    "JUnit.CustomerDAOTest.findByIdTest.executor": "Run",
+    "JUnit.CustomerDAOTest.findByInvalidIdTest.executor": "Run",
+    "JUnit.EmployeeDAOTest.createNewEmployeeTest.executor": "Run",
+    "JUnit.EmployeeDAOTest.executor": "Run",
+    "JUnit.EmployeeDAOTest.findByIdTest.executor": "Run",
+    "JUnit.EmployeeDAOTest.findByInvalidFirstNameTest.executor": "Run",
+    "JUnit.EmployeeDAOTest.findByInvalidIdTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/phaeded/Development/2024-RTT-62/module-305/M305-JDBC/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.EmployeeDAOTest">
+    <configuration name="EmployeeDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="M305-JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.database.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.database.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.database.dao.EmployeeDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeDAOTest.createNewEmployeeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="M305-JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.database.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.database.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.database.dao.EmployeeDAOTest" />
+      <option name="METHOD_NAME" value="createNewEmployeeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeDAOTest.findByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="M305-JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.database.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.database.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.database.dao.EmployeeDAOTest" />
+      <option name="METHOD_NAME" value="findByIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeDAOTest.findByInvalidFirstNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="M305-JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.database.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.database.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.database.dao.EmployeeDAOTest" />
+      <option name="METHOD_NAME" value="findByInvalidFirstNameTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeDAOTest.findByInvalidIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="M305-JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.database.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.database.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.example.database.dao.EmployeeDAOTest" />
+      <option name="METHOD_NAME" value="findByInvalidIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EmployeeDAOTest" />
+        <item itemvalue="JUnit.EmployeeDAOTest.createNewEmployeeTest" />
+        <item itemvalue="JUnit.EmployeeDAOTest.findByInvalidFirstNameTest" />
+        <item itemvalue="JUnit.EmployeeDAOTest.findByInvalidIdTest" />
+        <item itemvalue="JUnit.EmployeeDAOTest.findByIdTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1aecd09-291f-46f9-b3a6-0f3c098bd66f" name="Changes" comment="" />
+      <created>1717435144076</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717435144076</updated>
+      <workItem from="1717435145328" duration="30707000" />
+      <workItem from="1717591385302" duration="82051000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
