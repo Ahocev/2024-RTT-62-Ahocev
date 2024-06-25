@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: "Helvetica";
+            margin: 0;
+            padding: 20px 20px 20px 20px;
+            display: flex;
+            justify-content:
+
+ center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+        }
+        .pageTitle {
+            font-size: 11vw;
+            font-weight: 500;
+            text-align: center;
+            margin: 0;
+        }
+        .divider {
+            width: 90%;
+            height: 2px;
+            background-color: black;
+            margin: 10px 0;
+        }
+        .titleContainer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .icon-button {
+            border: none;
+            background: none;
+            padding: 0;
+            margin-left: 20px; /* Ensure this matches the gap between nav links */
+        }
+        .icon-button img {
+            width: 50px;
+            height: 50px;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .is-invalid {
+            border-color: #dc3545;
+        }
+        .is-valid {
+            border-color: #28a745;
+        }
+        .invalid-feedback {
+            display: block;
+            color: #dc3545;
+        }
+        .already {
+            text-align: center;
+            padding: 20px;
+        }
+        .formTag {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-links">
+            <a href="index.html">SEARCH</a>
+            <a href="index.html">LOGIN</a>
+            <a href="register.html">REGISTER</a>
+            <a href="index.html">MY PROFILE</a>
+        </div>
+        <div class="dropdown">
+            <button class="icon-button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../media/Midnight-Lightening.jpeg" alt="Icon">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#browse">Browse</a></li>
+                <li><a class="dropdown-item" href="#boulder-input">Boulder Input Form</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="titleContainer">
+        <div class="divider"></div>
+        <h1 class="pageTitle">BOULDERING DB</h1>
+        <div class="divider"></div>
+        <div class="form-container">
+            <form onsubmit="return onSubmit()">
+                <div class="formTag">    
+                    <h1>Register</h1>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+                    <div id="firstNameHelp" class="form-text">So we know who you are.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp">
+                    <div id="lastNameHelp" class="form-text">Optional.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="state" class="form-label">State</label>
+                    <select class="form-select" id="state">
+                        <option value="">Select your state</option>
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AZ">AZ</option>
+                        <option value="AR">AR</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="IA">IA</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="ME">ME</option>
+                        <option value="MD">MD</option>
+                        <option value="MA">MA</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MS">MS</option>
+                        <option value="MO">MO</option>
+                        <option value="MT">MT</option>
+                        <option value="NE">NE</option>
+                        <option value="NV">NV</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NY">NY</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WV">WV</option>
+                        <option value="WI">WI</option>
+                        <option value="WY">WY</option>
+                    </select>
+                    <div id="stateHelp" class="form-text">Optional.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" aria-describedby="passwordHelp">
+                    <div id="passwordHelp" class="form-text">Enter your password.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" aria-describedby="passwordHelp">
+                    <div id="passwordHelp" class="form-text">Confirm your password.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="already"> Already have an account?
+                    <a href="index.html">Login now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script for form validation -->
+    <script>
+        function onSubmit() {
+            console.log("on submit function called");
+
+            let firstName = document.getElementById("firstName");
+            let firstNameValue = firstName.value;
+
+            if (firstNameValue == '') {
+                console.log("First Name Required");
+
+                firstName.classList.add("is-invalid");
+                
+                document.getElementById("firstNameHelp").textContent = "First name is required";
+                document.getElementById("firstNameHelp").classList.add("invalid-feedback");
+            } else {
+                firstName.classList.remove("is-invalid");
+                firstName.classList.add("is-valid");
+            }
+
+            let email = document.getElementById("exampleInputEmail1");
+            let emailValue = email.value;
+            let emailPattern = /^\w+@[\w.]+$/;
+
+            if (emailValue == '') {
+                console.log("Email Required");
+
+                email.classList.add("is-invalid");
+                
+                document.getElementById("emailHelp").textContent = "Email is required";
+                document.getElementById("emailHelp").classList.add("invalid-feedback");
+            } else if (!emailPattern.test(emailValue)) {
+                console.log("InvalidEmail Format");
+
+                email.classList.add("is-invalid");
+                
+                document.getElementById("emailHelp").textContent = "Invalid email format";
+                document.getElementById("emailHelp").classList.add("invalid-feedback");
+            } else {
+                email.classList.remove("is-invalid");
+                email.classList.add("is-valid");
+            }
+
+            let password = document.getElementById("password");
+            let confirmPassword = document.getElementById("confirmPassword");
+            let passwordValue = password.value;
+            let confirmPasswordValue = confirmPassword.value;
+            let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            if (passwordValue == '' || confirmPasswordValue == '') {
+                console.log("Both Passwords Required");
+
+                password.classList.add("is-invalid");
+                confirmPassword.classList.add("is-invalid");
+
+                document.getElementById("passwordHelp").textContent = "Both passwords are required";
+                document.getElementById("passwordHelp").classList.add("invalid-feedback");
+            } else if (passwordValue !== confirmPasswordValue) {
+                console.log("Passwords do not match");
+
+                password.classList.add("is-invalid");
+                confirmPassword.classList.add("is-invalid");
+
+                document.getElementById("passwordHelp").textContent = "Passwords do not match";
+                document.getElementById("passwordHelp").classList.add("invalid-feedback");
+            } else if (!passwordPattern.test(passwordValue)) {
+                console.log("Invalid Password");
+
+                password.classList.add("is-invalid");
+                confirmPassword.classList.add("is-invalid");
+
+                document.getElementById("passwordHelp").textContent = "Password must be at least 8 characters long and contain at least one letter and one number";
+                document.getElementById("passwordHelp").classList.add("invalid-feedback");
+            } else {
+                password.classList.remove("is-invalid");
+                password.classList.add("is-valid");
+                confirmPassword.classList.remove("is-invalid");
+                confirmPassword.classList.add("is-valid");
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

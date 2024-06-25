@@ -6,21 +6,15 @@
 }
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
   min-height: 100vh;
   width: 100%;
   padding: 0 10px;
-}
-body::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("../media/background.jpg");
+  position: relative;
+  background-image: url("../media/boulderingdb.png");
   background-position: center;
   background-size: cover;
-  z-index: -1;
+  background-repeat: no-repeat;
 }
 .wrapper {
   width: 400px;
@@ -30,6 +24,8 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  position: absolute;
+  top: 20%;
 }
 form {
   display: flex;
@@ -38,7 +34,8 @@ form {
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 .input-field {
   position: relative;
@@ -50,10 +47,11 @@ h2 {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  color: #fff;
+  color: #000000;
   font-size: 16px;
   pointer-events: none;
   transition: 0.15s ease;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 .input-field input {
   width: 100%;
@@ -62,7 +60,7 @@ h2 {
   border: none;
   outline: none;
   font-size: 16px;
-  color: #fff;
+  color: #000000;
 }
 .input-field input:focus~label,
 .input-field input:valid~label {
@@ -70,15 +68,19 @@ h2 {
   top: 10px;
   transform: translateY(-120%);
 }
+.input-field input:hover::placeholder {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
 .forget {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 25px 0 35px 0;
-  color: #fff;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 #remember {
-  accent-color: #fff;
+  accent-color: #000000;
 }
 .forget label {
   display: flex;
@@ -86,10 +88,12 @@ h2 {
 }
 .forget label p {
   margin-left: 8px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 .wrapper a {
-  color: #efefef;
+  color: #000000;
   text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 .wrapper a:hover {
   text-decoration: underline;
@@ -105,14 +109,52 @@ button {
   font-size: 16px;
   border: 2px solid transparent;
   transition: 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 button:hover {
-  color: #fff;
-  border-color: #fff;
+  color: #000000;
+  border-color: #000000;
   background: rgba(255, 255, 255, 0.15);
 }
 .register {
   text-align: center;
   margin-top: 30px;
-  color: #fff;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+.input-field-group {
+  display: flex;
+  gap: 10px;
+}
+.input-field-group .input-field {
+  flex: 1;
+}
+.input-field-group .input-field select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+.input-field-group .input-field label {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+.input-field input::placeholder {
+  color: transparent;
+}
+.input-field input:focus::placeholder {
+  color: #000000;
+}
+.input-field-group .input-field select::placeholder {
+  color: transparent;
+}
+.input-field-group .input-field select:focus::placeholder {
+  color: #000000;
+}
+.input-field-group .input-field select:hover::placeholder {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }

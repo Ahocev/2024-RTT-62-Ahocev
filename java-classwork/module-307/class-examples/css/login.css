@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("../media/boulderingplaceholder.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+}
+.is-invalid {
+    border-color: #dc3545;
+}
+.is-valid {
+    border-color: #28a745;
+}
+.invalid-feedback {
+    display: block;
+    color: #dc3545;
+}
+.already {
+    padding: 20px;
+}
+.formTag {
+    margin-bottom: 20px;
+}
+.btn-primary {
+    width: 100%;
+}

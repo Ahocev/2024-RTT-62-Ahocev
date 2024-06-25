@@ -1,0 +1,145 @@
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.box1 {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    margin-right: 20px;
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.contact-info {
+    flex-grow: 1;
+}
+
+.contact-info h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.contact-info .title {
+    color: #00aaff;
+}
+
+.box2 {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.info-container {
+    display: flex;
+}
+
+.titles {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.details {
+    text-align: left;
+}
+
+.box3 {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column {
+    width: 70%;
+}
+
+.right-column {
+    width: 28%;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    background-color: #00aaff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.job, .degree {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.job h3, .degree h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.job .years, .degree .years {
+    float: right;
+}
+
+.job .position, .degree .degree-title {
+    font-weight: bold;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills ul li {
+    margin: 5px 0;
+}
+
+.skill-level {
+    float: right;
+}
+
+.programming-skills h3, .graphic-skills h3, .language-skills h3 {
+    background-color: #00aaff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 21px;
+}
+
+.language-skills ul {
+    display: flex;
+    justify-content: space-around;
+}

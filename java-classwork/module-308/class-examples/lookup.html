@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="h1Tag" class="class1">This is a header tag 1</h1>
+    <h1 name="inputText"class="class2">This is a header tag 2</h1>
+    <h1 name="inputText"class="class1">This is a header tag 3</h1>
+
+    <input type="text" name="inputText"/>
+
+    <script>
+        // find element by id will return 1 because id is unique
+        console.log("=====================getElementById=========================")
+        let element = document.getElementById("h1Tag");
+        console.log(element);
+
+        // find elements by name returns a list of all elements where it finds "inputText"
+        console.log("======================getElementsByName========================")
+        let items = document.getElementsByName("inputText");
+        for (const element of items) {
+            console.log(element);
+        }
+
+         // find elements with html tag and will return list of elements
+         console.log("=======================getElementsByTagName=======================")
+        let h1 = document.getElementsByTagName("h1");
+        for (const h1Key of h1) {
+            console.log(h1Key);
+        }
+
+         // find elements css class name on them
+         console.log("=======================getElementsByClassName=======================")
+         let classItems = document.getElementsByClassName("class1");
+
+            for (let classItem of classItems) {
+            console.log(classItem);
+        }
+        
+    </script>
+
+</body>
+</html>

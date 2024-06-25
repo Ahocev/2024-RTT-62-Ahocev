@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Form</title>
+  <link rel="stylesheet" href="css/profilestyles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form id="profileForm" action="#">
+      <h2>Profile</h2>
+      
+      <div class="input-field">
+        <input type="text" required>
+        <label>Firstname</label>
+      </div>
+      
+      <div class="input-field">
+        <input type="text" required>
+        <label>Lastname</label>
+      </div>
+
+      <div class="input-field-group">
+        <div class="input-field">
+          <input type="text" required data-placeholder="5'6&quot;" pattern="\d+'?\d*\"?">
+          <label>Height</label>
+        </div>
+        
+        <div class="input-field">
+          <input type="text" required data-placeholder="+4" pattern="\+\d+">
+          <label>Ape Index</label>
+        </div>
+        
+        <div class="input-field">
+          <input type="text" required data-placeholders='["Female", "Male", "Non-binary"]'>
+          <label>Gender</label>
+        </div>
+      </div>
+      
+      <button type="submit">Save</button>
+      
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('input[data-placeholder]');
+      const genderInput = document.querySelector('input[data-placeholders]');
+      const form = document.getElementById('profileForm');
+
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.placeholder = this.getAttribute('data-placeholder');
+        });
+
+        input.addEventListener('blur', function() {
+          const pattern = new RegExp(this.getAttribute('pattern'));
+          if (!pattern.test(this.value)) {
+            alert(`Please enter a valid ${this.previousElementSibling.innerText.toLowerCase()} format.`);
+            this.value = '';
+            this.placeholder = this.getAttribute('data-placeholder');
+          } else {
+            this.placeholder = '';
+          }
+        });
+      });
+
+      if (genderInput) {
+        let placeholders = JSON.parse(genderInput.getAttribute('data-placeholders'));
+        let index = 0;
+        let interval;
+
+        genderInput.addEventListener('focus', function() {
+          interval = setInterval(() => {
+            genderInput.placeholder = placeholders[index];
+            index = (index + 1) % placeholders.length;
+          }, 1000); // Change placeholder every 1 second
+        });
+
+        genderInput.addEventListener('blur', function() {
+          clearInterval(interval);
+          if (!placeholders.includes(genderInput.value)) {
+            alert(`Please select a valid gender option: ${placeholders.join(', ')}`);
+            genderInput.value = '';
+          }
+          genderInput.placeholder = '';
+        });
+      }
+
+      form.addEventListener('submit', function(event) {
+        const invalidInputs = Array.from(inputs).filter(input => {
+          const pattern = new RegExp(input.getAttribute('pattern'));
+          return !pattern.test(input.value);
+        });
+
+        if (invalidInputs.length > 0) {
+          alert('Please fill out all fields correctly.');
+          event.preventDefault();
+        }
+
+        if (!placeholders.includes(genderInput.value)) {
+          alert(`Please select a valid gender option: ${placeholders.join(', ')}`);
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

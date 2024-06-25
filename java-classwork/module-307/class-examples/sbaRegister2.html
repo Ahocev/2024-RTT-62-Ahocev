@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: "Helvetica";
+            margin: 0;
+            padding: 20px 20px 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+        }
+        .pageTitle {
+            font-size: 11vw;
+            font-weight: 500;
+            text-align: center;
+            margin: 0;
+        }
+        .divider {
+            width: 90%;
+            height: 2px;
+            background-color: black;
+            margin: 10px 0;
+        }
+        .titleContainer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .icon-button {
+            border: none;
+            background: none;
+            padding: 0;
+            margin-left: 20px; /* Ensure this matches the gap between nav links */
+        }
+        .icon-button img {
+            width: 50px;
+            height: 50px;
+        }
+        .responsive-image {
+            width: 90%;
+            height: auto;
+            margin-top: 10px;
+        }
+        .popular-section {
+            width: 90%;
+            margin-top: 30px;
+        }
+        .popular-title {
+            text-align: left;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .flex-box {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .flex-box a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .flex-box a:hover {
+            color: inherit;
+        }
+        .flex-box img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        .flex-box:hover img {
+            filter: grayscale(0%);
+        }
+        .flex-box-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        .flex-box-subtitle {
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        .boulderDetails {
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        h5 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-links">
+            <a href="#search">SEARCH</a>
+            <a href="#login">LOGIN</a>
+            <a href="#register" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a>
+            <a href="#profile">MY PROFILE</a>
+        </div>
+        <div class="dropdown">
+            <button class="icon-button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../media/Midnight-Lightening.jpeg" alt="Icon">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#browse">Browse</a></li>
+                <li><a class="dropdown-item" href="#boulder-input">Boulder Input Form</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="titleContainer">
+        <div class="divider"></div>
+        <h1 class="pageTitle">BOULDERING DB</h1>
+        <div class="divider"></div>
+        <img src="../media/TheMandala.jpg" alt="The Mandala" class="responsive-image">
+    </div>
+    <div class="popular-section">
+        <div class="popular-title">POPULAR NOW</div>
+        <div class="row gx-3">
+            <div class="col-md-3">
+                <div class="flex-box">
+                    <a href="#mandala-details"></a>
+                    <div class="flex-box-title">THE MANDALA</div>
+                    <img src="../media/TheMandala.jpg" alt="The Mandala">
+                    <div class="flex-box-subtitle">Bishop, CA</div>
+                    <div class="flex-box-subtitle">V12</div>
+                    <p class="boulderDetails">text goes here and here's what it says climb text goes here and here's what it says climb</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="flex-box">
+                    <a href="#orb-details"></a>
+                    <div class="flex-box-title">THE ORB</div>
+                    <img src="../media/TheMandala.jpg" alt="The Orb">
+                    <div class="flex-box-subtitle">Rocktown, Georgia</div>
+                    <div class="flex-box-subtitle">V8</div>
+                    <p class="boulderDetails">text goes here and here's what it says climb text goes here and here's what it says climb</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="flex-box">
+                    <a href="#midnight-details"></a>
+                    <div class="flex-box-title">MIDNIGHT</div>
+                    <img src="../media/TheMandala.jpg" alt="Midnight">
+                    <div class="flex-box-subtitle">Rocktown, Georgia</div>
+                    <div class="flex-box-subtitle">V8</div>
+                    <p class="boulderDetails">text goes here and here's what it says climb text goes here and here's what it says climb</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="flex-box">
+                    <a href="#meadowlark-details"></a>
+                    <div class="flex-box-title">MEADOWLARK</div>
+                    <img src="../media/TheMandala.jpg" alt="Meadowlark">
+                    <div class="flex-box-subtitle">Rocktown, Georgia</div>
+                    <div class="flex-box-subtitle">V8</div>
+                    <p class="boulderDetails">text goes here and here's what it says climb text goes here and here's what it says climb</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="return onSubmit()">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+                            <div id="firstNameHelp" class="form-text">So we know who you are.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp">
+                            <div id="lastNameHelp" class="form-text">Optional.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="state">
+                                <option value="">Select your state</option>
+                                <option value="AL">AL</option>
+                                <option value="AK">AK</option>
+                                <option value="AZ">AZ</option>
+                                <option value="AR">AR</option>
+                                <option value="CA">CA</option>
+                                <option value="CO">CO</option>
+                                <option value="CT">CT</option>
+                                <option value="DE">DE</option>
+                                <option value="FL">FL</option>
+                                <option value="GA">GA</option>
+                                <option value="HI">HI</option>
+                                <option value="ID">ID</option>
+                                <option value="IL">IL</option>
+                                <option value="IN">IN</option>
+                                <option value="IA">IA</option>
+                                <option value="KS">KS</option>
+                                <option value="KY">KY</option>
+                                <option value="LA">LA</option>
+                                <option value="ME">ME</option>
+                                <option value="MD">MD</option>
+                                <option value="MA">MA</option>
+                                <option value="MI">MI</option>
+                                <option value="MN">MN</option>
+                                <option value="MS">MS</option>
+                                <option value="MO">MO</option>
+                                <option value="MT">MT</option>
+                                <option value="NE">NE</option>
+                                <option value="NV">NV</option>
+                                <option value="NH">NH</option>
+                                <option value="NJ">NJ</option>
+                                <option value="NM">NM</option>
+                                <option value="NY">NY</option>
+                                <option value="NC">NC</option>
+                                <option value="ND">ND</option>
+                                <option value="OH">OH</option>
+                                <option value="OK">OK</option>
+                                <option value="OR">OR</option>
+                                <option value="PA">PA</option>
+                                <option value="RI">RI</option>
+                                <option value="SC">SC</option>
+                                <option value="SD">SD</option>
+                                <option value="TN">TN</option>
+                                <option value="TX">TX</option>
+                                <option value="UT">UT</option>
+                                <option value="VT">VT</option>
+                                <option value="VA">VA</option>
+                                <option value="WA">WA</option>
+                                <option value="WV">WV</option>
+                                <option value="WI">WI</option>
+                                <option value="WY">WY</option>
+                            </select>
+                            <div id="stateHelp" class="form-text">Optional.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" aria-describedby="passwordHelp">
+                            <div id="passwordHelp" class="form-text">Enter your password.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" aria-describedby="passwordHelp">
+                            <div id="passwordHelp" class="form-text">Confirm your password.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="already"> Already have an account?
+                            <a href="#login" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Script for form validation -->
+<script>
+    function onSubmit() {
+        console.log("on submit function called");
+
+        let firstName = document.getElementById("firstName");
+        let firstNameValue = firstName.value;
+
+        if (firstNameValue == '') {
+            console.log("First Name Required");
+
+            firstName.classList.add("is-invalid");
+            
+            document.getElementById("firstNameHelp").textContent = "First name is required";
+            document.getElementById("firstNameHelp").classList.add("invalid-feedback");
+        } else {
+            firstName.classList.remove("is-invalid");
+            firstName.classList.add("is-valid");
+        }
+
+        let email = document.getElementById("exampleInputEmail1");
+        let emailValue = email.value;
+        let emailPattern = /^\w+@[\w.]+$/;
+
+        if (emailValue == '') {
+            console.log("Email Required");
+
+            email.classList.add("is-invalid");
+            
+            document.getElementById("emailHelp").textContent = "Email is required";
+            document.getElementById("emailHelp").classList.add("invalid-feedback");
+        } else if (!emailPattern.test(emailValue)) {
+            console.log("Invalid Email Format");
+
+            email.classList.add("is-invalid");
+            
+            document.getElementById("emailHelp").textContent = "Invalid email format";
+            document.getElementById("emailHelp").classList.add("invalid-feedback");
+        } else {
+            email.classList.remove("is-invalid");
+            email.classList.add("is-valid");
+        }
+
+        let password = document.getElementById("password");
+        let confirmPassword = document.getElementById("confirmPassword");
+        let passwordValue = password.value;
+        let confirmPasswordValue = confirmPassword.value;
+        let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+        if (passwordValue == '' || confirmPasswordValue == '') {
+            console.log("Both Passwords Required");
+
+            password.classList.add("is-invalid");
+            confirmPassword.classList.add("is-invalid");
+
+            document.getElementById("passwordHelp").textContent = "Both passwords are required";
+            document.getElementById("passwordHelp").classList.add("invalid-feedback");
+        } else if (passwordValue !== confirmPasswordValue) {
+            console.log("Passwords do not match");
+
+            password.classList.add("is-invalid");
+            confirmPassword.classList.add("is-invalid");
+
+            document.getElementById("passwordHelp").textContent = "Passwords do not match";
+            document.getElementById("passwordHelp").classList.add("invalid-feedback");
+        } else if (!passwordPattern.test(passwordValue)) {
+            console.log("Invalid Password");
+
+            password.classList.add("is-invalid");
+            confirmPassword.classList.add("is-invalid");
+
+            document.getElementById("passwordHelp").textContent = "Password must be at least 8 characters long and contain at least one letter and one number";
+            document.getElementById("passwordHelp").classList.add("invalid-feedback");
+        } else {
+            password.classList.remove("is-invalid");
+            password.classList.add("is-valid");
+            confirmPassword.classList.remove("is-invalid");
+            confirmPassword.classList.add("is-valid");
+        }
+
+        return false;
+    }
+</script>
+</body>
+</html>
+```

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<script>
+function onSubmit() {
+    console.log("on submit function called");
+
+    let firstName = document.getElementById("firstName");
+    let firstNameValue = firstName.value;
+
+    if (firstNameValue == '') {
+        console.log("First Name Required");
+
+        firstName.classList.add("is-invalid");
+        
+        document.getElementById("firstNameHelp").textContent = "First name is required";
+        document.getElementById("firstNameHelp").classList.add("invalid-feedback");
+    } else {
+        firstName.classList.remove("is-invalid");
+        firstName.classList.add("is-valid");
+    }
+
+    let email = document.getElementById("exampleInputEmail1");
+    let emailValue = email.value;
+    let emailPattern = /^\w+@[\w.]+$/;
+
+    if (emailValue == '') {
+        console.log("Email Required");
+
+        email.classList.add("is-invalid");
+        
+        document.getElementById("emailHelp").textContent = "Email is required";
+        document.getElementById("emailHelp").classList.add("invalid-feedback");
+    } else if (!emailPattern.test(emailValue)) {
+        console.log("Invalid Email Format");
+
+        email.classList.add("is-invalid");
+        
+        document.getElementById("emailHelp").textContent = "Invalid email format";
+        document.getElementById("emailHelp").classList.add("invalid-feedback");
+    } else {
+        email.classList.remove("is-invalid");
+        email.classList.add("is-valid");
+    }
+
+    let password = document.getElementById("password");
+    let confirmPassword = document.getElementById("confirmPassword");
+    let passwordValue = password.value;
+    let confirmPasswordValue = confirmPassword.value;
+    let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    if (passwordValue == '' || confirmPasswordValue == '') {
+        console.log("Both Passwords Required");
+
+        password.classList.add("is-invalid");
+        confirmPassword.classList.add("is-invalid");
+
+        document.getElementById("passwordHelp").textContent = "Both passwords are required";
+        document.getElementById("passwordHelp").classList.add("invalid-feedback");
+    } else if (passwordValue !== confirmPasswordValue) {
+        console.log("Passwords do not match");
+
+        password.classList.add("is-invalid");
+        confirmPassword.classList.add("is-invalid");
+
+        document.getElementById("passwordHelp").textContent = "Passwords do not match";
+        document.getElementById("passwordHelp").classList.add("invalid-feedback");
+    } else if (!passwordPattern.test(passwordValue)) {
+        console.log("Invalid Password");
+
+        password.classList.add("is-invalid");
+        confirmPassword.classList.add("is-invalid");
+
+        document.getElementById("passwordHelp").textContent = "Password must be at least 8 characters long and contain at least one letter and one number";
+        document.getElementById("passwordHelp").classList.add("invalid-feedback");
+    } else {
+        password.classList.remove("is-invalid");
+        password.classList.add("is-valid");
+        confirmPassword.classList.remove("is-invalid");
+        confirmPassword.classList.add("is-valid");
+    }
+
+    return false;
+}
+    
+</script>
+
+<body>
+    <section>
+        <div class="container">
+            <form onsubmit="return onSubmit()">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+                    <div id="firstNameHelp" class="form-text">So we know who you are.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp">
+                    <div id="lastNameHelp" class="form-text">Optional.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" aria-describedby="passwordHelp">
+                    <div id="passwordHelp" class="form-text">Enter your password.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" aria-describedby="passwordHelp">
+                    <div id="passwordHelp" class="form-text">Confirm your password.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

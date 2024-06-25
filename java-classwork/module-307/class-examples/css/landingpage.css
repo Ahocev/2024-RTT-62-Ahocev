@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("path/to/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #555;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.search-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #000;
+}
+
+.popular-now {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.popular-now h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.popular-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.popular-item {
+    width: calc(25% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.popular-item:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+.popular-item img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.popular-item:hover img {
+    filter: grayscale(0);
+}
+
+.item-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.item-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.item-info p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .popular-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container input {
+        width: 80%;
+    }
+
+    .popular-item {
+        width: 100%;
+    }
+}
