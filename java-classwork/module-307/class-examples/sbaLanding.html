@@ -72,7 +72,8 @@
         }
         .popular-title {
             text-align: left;
-            margin-bottom: 20px;
+            margin-top: 50px;
+            margin-bottom: 0px;
             font-weight: bold;
         }
         .flex-box {
@@ -120,13 +121,20 @@
             position: relative;
             z-index: 2;
         }
+        .title-link {
+        text-decoration: none;
+        color: inherit;
+        }
+        .title-link:hover {
+        color: inherit;
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="nav-links">
             <a href="#search">SEARCH</a>
-            <a href="sbaLogin">LOGIN</a>
+            <a href="sbaLogin.html">LOGIN</a>
             <a href="sbaRegister.html">REGISTER</a>
             <a href="#profile">MY PROFILE</a>
         </div>
@@ -142,7 +150,9 @@
     </header>
     <div class="titleContainer">
         <div class="divider"></div>
+        <a href="sbaLanding.html" class="title-link">
         <h1 class="pageTitle">BOULDERING DB</h1>
+        </a>
         <div class="divider"></div>
         <img src="../media/TheMandala.jpg" alt="The Mandala" class="responsive-image">
     </div>
