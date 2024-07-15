@@ -1,6 +1,8 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.database.dao.EmployeeDAO;
 import com.example.springboot.database.dao.ProductDAO;
+import com.example.springboot.database.entity.Employee;
 import com.example.springboot.database.entity.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,14 +62,37 @@ public class IndexController {
     }
 
     @GetMapping("/search")
-    public ModelAndView search() {
+    public ModelAndView search(@RequestParam(required = false) String search) {
         // this page is for another page of the website which is express as "/page-url"
         ModelAndView response = new ModelAndView("search");
 
-        List<Product> products = productDAO.findAll();
+        log.debug("The user searched for the term: " + search);
+
+
+        response.addObject("search", search);
+
+        List<Product> products = productDAO.findByNameOrCode(search);
         response.addObject("products", products);
 
         return response;
+    }
+
+    @Autowired
+    private EmployeeDAO employeeDAO;
+
+    @GetMapping("/esearch")
+    public ModelAndView esearch(@RequestParam(required = false) String esearch) {
+        ModelAndView response = new ModelAndView("esearch");
+
+        log.debug("The user searched for the term: " + esearch);
+
+        response.addObject("esearch", esearch);
+
+        List<Employee> employees = employeeDAO.findByFirstOrLast(esearch);
+        response.addObject("employees", employees);
+
+        return response;
+
     }
 
 }
