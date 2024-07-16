@@ -2,12 +2,18 @@ package com.example.springboot.controller;
 
 import com.example.springboot.database.dao.CustomerDAO;
 import com.example.springboot.database.dao.EmployeeDAO;
+import com.example.springboot.database.dao.OfficeDAO;
 import com.example.springboot.database.entity.Customer;
 import com.example.springboot.database.entity.Employee;
+import com.example.springboot.database.entity.Office;
 import com.example.springboot.form.CreateEmployeeFormBean;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +31,9 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeDAO employeeDao;
+
+    @Autowired
+    private OfficeDAO officeDao;  // Add this line to include OfficeDAO
 
     @GetMapping("/detail")
     public ModelAndView detail(@RequestParam Integer employeeId) {
@@ -46,29 +55,63 @@ public class EmployeeController {
         List<Employee> reportsToEmployees = employeeDao.findAll();
         response.addObject("reportsToEmployees", reportsToEmployees);
 
+        List<Office> offices = officeDao.findAll();  // Fetch the list of Office entities
+        log.debug("Offices retrieved: {}", offices);  // Add logging to check the data
+        response.addObject("offices", offices);  // Pass it to the model
+
+
         return response;
     }
 
     @GetMapping("/createSubmit")
-    public ModelAndView creatSubmit(CreateEmployeeFormBean form) {
+    public ModelAndView creatSubmit(@Valid CreateEmployeeFormBean form, BindingResult bindingResult) {
         ModelAndView response = new ModelAndView();
 
-        log.debug(form.toString());
+        if (bindingResult.hasErrors()) {
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                log.debug("Validation error : " + ((FieldError) error).getField() + " = " + error.getDefaultMessage());
+            }
 
-        Employee employee = new Employee();
-        employee.setEmail(form.getEmail());
-        employee.setFirstName(form.getFirstName());
-        employee.setLastName(form.getLastName());
-        employee.setReportsTo(form.getReportsTo());
-        employee.setExtension("x123");
-        employee.setOfficeId(1);
-        employee.setJobTitle("Job Title");
+            response.addObject("bindingResult", bindingResult);
 
-        employee = employeeDao.save(employee);
+            List<Employee> reportsToEmployees = employeeDao.findAll();
+            response.addObject("reportsToEmployees", reportsToEmployees);
 
-        response.setViewName("redirect:/employee/detail?employeeId=" + employee.getId());
+            List<Office> offices = officeDao.findAll();  // Fetch the list of Office entities
+            response.addObject("offices", offices);  // Pass it to the model
 
-        return response;
+            response.setViewName("employee/create");
+
+            response.addObject("form", form);
+
+            return response;
+
+        } else {
+
+            log.debug(form.toString());
+
+            Employee employee = new Employee();
+            employee.setEmail(form.getEmail());
+            employee.setFirstName(form.getFirstName());
+            employee.setLastName(form.getLastName());
+            employee.setReportsTo(form.getReportsTo());
+            employee.setExtension(form.getExtension());
+            employee.setVacationHours(form.getVacationHours());
+            employee.setProfileImageUrl(form.getProfileImageUrl());
+            // employee.setOfficeId(form.getOfficeId());
+            employee.setJobTitle(form.getJobTitle());
+
+            Office office = officeDao.findById((form.getOfficeId()));
+
+            employee.setOffice(office);
+
+            employee = employeeDao.save(employee);
+
+            response.setViewName("redirect:/employee/detail?employeeId=" + employee.getId());
+
+            return response;
+        }
+
     }
 
 }

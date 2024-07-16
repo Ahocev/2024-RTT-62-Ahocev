@@ -17,7 +17,12 @@ public class Employee {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "office_id")
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY, optional =true)
+    @JoinColumn(name = "office_id", nullable = true)
+    private Office office;
+
+    @Column(name = "office_id",insertable = false, updatable = false)
     private Integer officeId;
 
     @Column(name = "lastname")

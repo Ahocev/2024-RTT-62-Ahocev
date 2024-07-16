@@ -21,6 +21,14 @@
                 <td>${employee.officeId}</td>
             </tr>
             <tr>
+                <td style="font-weight: bolder;">Office City:</td>
+                <td>${employee.office.city}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bolder;">Office Phone Number:</td>
+                <td>${employee.office.phone}</td>
+            </tr>
+            <tr>
                 <td style="font-weight: bolder;">Full Name:</td>
                 <td>${employee.firstName} ${employee.lastName}</td>
             </tr>
@@ -37,9 +45,14 @@
                 <td>${employee.jobTitle}</td>
             </tr>
             <tr>
-                <td style="font-weight: bolder;">Vacation Hrs:</td>
+                <td style="font-weight: bolder;">Vacation Hours:</td>
                 <td>${employee.vacationHours}</td>
             </tr>
+            <tr>
+                <td style="font-weight: bolder;">Profile Image URL:</td>
+                <td>${employee.profileImageUrl}</td>
+            </tr>
+
         </table>
     </div>
 
