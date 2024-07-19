@@ -10,11 +10,12 @@
             <h2 class="text-center">${customer.customerName}</h2>
         </div>
     </div>
+
     <div class="row justify-content-center">
         <table class="table table-success table-striped table-bordered table-responsive" style="width: 750pt">
             <tr>
                 <td style="font-weight: bolder;">Customer ID:</td>
-                <td>${customer.id}</td>
+                <td><a href="edit?customerId=${customer.id}">${customer.id}</a></td>
             </tr>
             <tr>
                 <td style="font-weight: bolder;">Contact First Name:</td>

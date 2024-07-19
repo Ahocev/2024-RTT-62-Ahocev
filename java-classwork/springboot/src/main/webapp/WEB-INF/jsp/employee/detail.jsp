@@ -14,7 +14,7 @@
         <table class="table table-success table-striped table-bordered table-responsive" style="width: 750pt">
             <tr>
                 <td style="font-weight: bolder;">Employee ID:</td>
-                <td>${employee.id}</td>
+                <td><a href="employee/edit?employeeId=${employee.id}">${employee.id}</a></td>
             </tr>
             <tr>
                 <td style="font-weight: bolder;">Office ID:</td>

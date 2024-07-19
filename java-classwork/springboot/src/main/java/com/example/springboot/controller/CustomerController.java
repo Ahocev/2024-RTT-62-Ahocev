@@ -81,12 +81,14 @@ public class CustomerController {
             if (customer != null) {
 
                 CreateCustomerFormBean form = new CreateCustomerFormBean();
+                form.setCustomerName(customer.getCustomerName());
                 form.setCustomerId(customer.getId());
                 form.setContactFirstname(customer.getContactFirstname());
                 form.setContactLastname(customer.getContactLastname());
                 form.setCity(customer.getCity());
                 form.setCountry(customer.getCountry());
                 form.setPhone(customer.getPhone());
+                form.setState(customer.getState());
                 form.setAddressLine1(customer.getAddressLine1());
                 form.setPostalCode(customer.getPostalCode());
                 form.setSalesRepEmployeeId(customer.getSalesRepEmployeeId());
