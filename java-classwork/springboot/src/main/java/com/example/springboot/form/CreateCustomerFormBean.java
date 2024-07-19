@@ -7,8 +7,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
 public class CreateCustomerFormBean {
+
+    private Integer customerId;
 
     private String customerName;
 
@@ -33,4 +34,5 @@ public class CreateCustomerFormBean {
     private Integer salesRepEmployeeId;
 
     private Double creditLimit;
+
 }

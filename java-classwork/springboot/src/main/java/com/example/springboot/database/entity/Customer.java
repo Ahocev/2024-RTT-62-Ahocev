@@ -67,18 +67,11 @@ public class Customer {
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Order> orders;
 
-    // you can only use a primitive type if the column is not nullable
-    // if the column is nullable then you have to use the Integer wrapper class because a primitive
-    // can not be set to null
-    // Because we added the @ManyToOne annotation (just above) this column is now considered a duplicate in hibernate
-    // by adding the insertable = false and the updatable = false we are essentially turning this into a read only variable!!!!!
-    // this will happen for any FK that we use with a @ManyToOne annotation
+
     @Column(name = "sales_rep_employee_id", insertable = false, updatable = false)
     private Integer salesRepEmployeeId;
 
-    // when there is a DECIMAL type in the database it should be a Double in java
-    // hibernate or other tools will guide you towards using a BigDecimal, while technically possible you are increasing
-    // your own hardship by using a BigDecimal
+
     @Column(name = "credit_limit", columnDefinition = "DECIMAL")
     private Double creditLimit;
 
