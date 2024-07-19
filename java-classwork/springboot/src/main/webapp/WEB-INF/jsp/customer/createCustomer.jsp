@@ -14,6 +14,8 @@
     <div class="row justify-content-center pt-5">
         <div class="col-6">
             <form action="/customer/createCustomerSubmit">
+                <input type="hidden" name="employeeId" value="${form.employeeId}">
+
                 <div class="row g-3 align-items-center pb-3">
                     <div class="col-3">
                         <label for="customerName" class="col-form-label">Customer Name</label>

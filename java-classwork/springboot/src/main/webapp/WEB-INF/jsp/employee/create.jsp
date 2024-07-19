@@ -5,7 +5,12 @@
 <section style="background-color:gray">
     <div class="container">
         <div class="row pt-5 pb-5">
-            <h1 class="text-center">Create Employee</h1>
+            <c:if test="${empty form.employeeId}">
+                <h1 class="text-center">Create Employee</h1>
+            </c:if>
+            <c:if test="${not empty form.employeeId}">
+                <h1 class="text-center">Edit Employee</h1>
+            </c:if>
         </div>
     </div>
 </section>
@@ -14,6 +19,8 @@
     <div class="row justify-content-center pt-5">
         <div class="col-6">
             <form action="/employee/createSubmit">
+                <input type="hidden" name="employeeId" value="${form.employeeId}">
+
                 <div class="row g-3 align-items-center">
                     <div class="col-3">
                         <label for="emailId" class="col-form-label">Email</label>
@@ -54,7 +61,7 @@
                         <label for="extension" class="col-form-label">Extension</label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="extension" name="extension" class="form-control">
+                        <input type="text" id="extension" name="extension" class="form-control" value="${form.extension}">
                     </div>
                 </div>
                 <div class="row g-3 align-items-center pt-3">
@@ -62,7 +69,7 @@
                         <label for="jobTitle" class="col-form-label">Job Title</label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="jobTitle" name="jobTitle" class="form-control">
+                        <input type="text" id="jobTitle" name="jobTitle" class="form-control" value="${form.jobTitle}">
                     </div>
                 </div>
                 <div class="row g-3 align-items-center pt-3">
@@ -70,7 +77,7 @@
                         <label for="vacationHours" class="col-form-label">Vacation Hours</label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="vacationHours" name="vacationHours" class="form-control">
+                        <input type="text" id="vacationHours" name="vacationHours" class="form-control" value="${form.vacationHours}">
                     </div>
                 </div>
                 <div class="row g-3 align-items-center pt-3">
@@ -78,7 +85,7 @@
                         <label for="profileImageUrl" class="col-form-label">Profile Image URL</label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="profileImageUrl" name="profileImageUrl" class="form-control">
+                        <input type="text" id="profileImageUrl" name="profileImageUrl" class="form-control" value="${form.profileImageUrl}">
                     </div>
                 </div>
                 <div class="row align-items-center pt-3">

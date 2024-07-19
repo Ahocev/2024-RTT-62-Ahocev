@@ -59,9 +59,47 @@ public class EmployeeController {
         log.debug("Offices retrieved: {}", offices);  // Add logging to check the data
         response.addObject("offices", offices);  // Pass it to the model
 
-
         return response;
     }
+
+    @GetMapping("/edit")
+    public ModelAndView edit(@RequestParam(required = false) Integer employeeId) {
+        ModelAndView response = new ModelAndView("employee/create");
+
+        List<Employee> reportsToEmployees = employeeDao.findAll();
+        response.addObject("reportsToEmployees", reportsToEmployees);
+
+        List<Office> offices = officeDao.findAll();  // Fetch the list of Office entities
+        log.debug("Offices retrieved: {}", offices);  // Add logging to check the data
+        response.addObject("offices", offices);  // Pass it to the model
+
+
+        if (employeeId != null) {
+            Employee employee = employeeDao.findById(employeeId);
+
+            if (employee != null) {
+
+                CreateEmployeeFormBean form = new CreateEmployeeFormBean();
+                form.setEmployeeId(employee.getId());
+                form.setEmail(employee.getEmail());
+                form.setFirstName(employee.getFirstName());
+                form.setLastName(employee.getLastName());
+                form.setReportsTo(employee.getReportsTo());
+                form.setOfficeId(employee.getOffice().getId());
+                form.setExtension(employee.getExtension());
+                form.setVacationHours(employee.getVacationHours());
+                form.setProfileImageUrl(employee.getProfileImageUrl());
+                form.setJobTitle(employee.getJobTitle());
+
+                response.addObject("form", form);
+
+            }
+        }
+
+        return response;
+
+    }
+
 
     @GetMapping("/createSubmit")
     public ModelAndView creatSubmit(@Valid CreateEmployeeFormBean form, BindingResult bindingResult) {
@@ -90,7 +128,11 @@ public class EmployeeController {
 
             log.debug(form.toString());
 
-            Employee employee = new Employee();
+            Employee employee = employeeDao.findById(form.getEmployeeId());
+            if (employee == null) {
+                employee = new Employee();
+            }
+
             employee.setEmail(form.getEmail());
             employee.setFirstName(form.getFirstName());
             employee.setLastName(form.getLastName());
@@ -98,7 +140,6 @@ public class EmployeeController {
             employee.setExtension(form.getExtension());
             employee.setVacationHours(form.getVacationHours());
             employee.setProfileImageUrl(form.getProfileImageUrl());
-            // employee.setOfficeId(form.getOfficeId());
             employee.setJobTitle(form.getJobTitle());
 
             Office office = officeDao.findById((form.getOfficeId()));
