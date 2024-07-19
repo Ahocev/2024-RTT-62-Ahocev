@@ -6,9 +6,7 @@ import com.example.springboot.database.dao.OrderDAO;
 import com.example.springboot.database.entity.Customer;
 import com.example.springboot.database.entity.Employee;
 import com.example.springboot.database.entity.Order;
-import com.example.springboot.database.entity.Office;
 import com.example.springboot.form.CreateCustomerFormBean;
-import com.example.springboot.form.CreateEmployeeFormBean;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,8 +34,6 @@ public class CustomerController {
      @Autowired
      private OrderDAO orderDao;
 
-
-    // this URL is going to be localhost:8080/customer/list
     @GetMapping("/search")
     public ModelAndView list() {
         return null;
@@ -55,8 +51,6 @@ public class CustomerController {
 
         return response;
     }
-
-
 
     @GetMapping("/create")
     public ModelAndView create() {
@@ -117,7 +111,6 @@ public class CustomerController {
             List<Employee> employees = employeeDao.findAll();
             response.addObject("employees", employees);
 
-
             response.setViewName("customer/edit");
 
             response.addObject("form", form);
@@ -153,5 +146,4 @@ public class CustomerController {
             return response;
         }
     }
-
 }

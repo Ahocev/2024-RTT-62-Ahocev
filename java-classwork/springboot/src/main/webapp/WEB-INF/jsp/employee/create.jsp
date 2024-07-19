@@ -94,6 +94,7 @@
                     </div>
                     <div class="col-9">
                         <select id="reportsTo" name="reportsTo" class="form-control">
+                            <option disabled selected value> -- select an option -- </option>
                             <c:forEach items="${reportsToEmployees}" var="employee">
                                 <option value="${employee.id}"
                                 <c:if test="${employee.id == form.reportsTo}"> selected </c:if> > ${employee.firstName} ${employee.lastName} </option>
@@ -107,6 +108,7 @@
                     </div>
                     <div class="col-9">
                         <select id="officeId" name="officeId" class="form-control">
+                            <option disabled selected value> -- select an option -- </option>
                             <c:forEach items="${offices}" var="office">
                                 <option value="${office.id}" <c:if test="${office.id == form.officeId}"> selected </c:if> > ${office.city} </option>
                             </c:forEach>

@@ -99,6 +99,7 @@
                     </div>
                     <div class="col-9">
                         <select id="salesRepEmployeeId" name="salesRepEmployeeId" class="form-control">
+                            <option disabled selected value> -- select an option -- </option>
                             <c:forEach items="${employees}" var="employee">
                                 <option value="${employee.id}"> ${employee.id}</option>
                             </c:forEach>
