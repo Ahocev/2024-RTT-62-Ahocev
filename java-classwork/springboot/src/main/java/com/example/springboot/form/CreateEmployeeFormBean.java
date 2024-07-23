@@ -19,7 +19,7 @@ public class CreateEmployeeFormBean {
     @Length(max = 100, message="Email must be less than 100 characters.")
     @NotEmpty(message = "Email is required.")
     @Email(message = "Must be a valid email.")
-    @EmployeeEmailUnique(message = "This email is already in use.")
+    // @EmployeeEmailUnique(message = "This email is already in use.")
     private String email;
 
     @Pattern(regexp="[a-zA-Z]+", message = "First name must have characters only.")

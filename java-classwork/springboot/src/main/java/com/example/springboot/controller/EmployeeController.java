@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -52,27 +53,25 @@ public class EmployeeController {
     public ModelAndView create() {
         ModelAndView response = new ModelAndView("employee/create");
 
+        loadDropdowns(response); // Pass it to the model
+
+        return response;
+    }
+
+    private void loadDropdowns(ModelAndView response) {
+
         List<Employee> reportsToEmployees = employeeDao.findAll();
         response.addObject("reportsToEmployees", reportsToEmployees);
 
         List<Office> offices = officeDao.findAll();  // Fetch the list of Office entities
-        log.debug("Offices retrieved: {}", offices);  // Add logging to check the data
-        response.addObject("offices", offices);  // Pass it to the model
-
-        return response;
+        response.addObject("offices", offices);
     }
 
     @GetMapping("/edit")
     public ModelAndView edit(@RequestParam(required = false) Integer employeeId) {
         ModelAndView response = new ModelAndView("employee/create");
 
-        List<Employee> reportsToEmployees = employeeDao.findAll();
-        response.addObject("reportsToEmployees", reportsToEmployees);
-
-        List<Office> offices = officeDao.findAll();  // Fetch the list of Office entities
-        log.debug("Offices retrieved: {}", offices);  // Add logging to check the data
-        response.addObject("offices", offices);  // Pass it to the model
-
+        loadDropdowns(response);
 
         if (employeeId != null) {
             Employee employee = employeeDao.findById(employeeId);
@@ -102,9 +101,16 @@ public class EmployeeController {
 
 // repo commit test
 
-    @GetMapping("/createSubmit")
+    @PostMapping("/createSubmit")
     public ModelAndView creatSubmit(@Valid CreateEmployeeFormBean form, BindingResult bindingResult) {
         ModelAndView response = new ModelAndView();
+
+        if (form.getEmployeeId() == null ){
+            Employee e = employeeDao.findByEmailIgnoreCase(form.getEmail());
+            if ( e != null ) {
+                bindingResult.rejectValue("email", "email", "This email is already in use.");
+            }
+        }
 
         if (bindingResult.hasErrors()) {
             for (ObjectError error : bindingResult.getAllErrors()) {
@@ -113,11 +119,7 @@ public class EmployeeController {
 
             response.addObject("bindingResult", bindingResult);
 
-            List<Employee> reportsToEmployees = employeeDao.findAll();
-            response.addObject("reportsToEmployees", reportsToEmployees);
-
-            List<Office> offices = officeDao.findAll();  // Fetch the list of Office entities
-            response.addObject("offices", offices);  // Pass it to the model
+            loadDropdowns(response);
 
             response.setViewName("employee/create");
 

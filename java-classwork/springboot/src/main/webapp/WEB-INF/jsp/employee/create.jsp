@@ -18,7 +18,7 @@
 <section class="container">
     <div class="row justify-content-center pt-5">
         <div class="col-6">
-            <form action="/employee/createSubmit">
+            <form action="/employee/createSubmit" method="post">
                 <input type="hidden" name="employeeId" value="${form.employeeId}">
 
                 <div class="row g-3 align-items-center">

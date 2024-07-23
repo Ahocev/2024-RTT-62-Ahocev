@@ -26,6 +26,8 @@ public class OrderController {
         List<Map<String,Object>> orderDetails = orderDao.getOrderDetails(orderId);
         response.addObject("orderDetails", orderDetails);
 
+        response.addObject("orderId", orderId);
+
         return response;
     }
 }
