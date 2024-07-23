@@ -50,10 +50,18 @@
             </tr>
             <tr>
                 <td style="font-weight: bolder;">Profile Image URL:</td>
-                <td>${employee.profileImageUrl}</td>
+                <td><img class="row col-5" src="${employee.profileImageUrl}"/></td>
             </tr>
 
         </table>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="/employee/edit?employeeId=${employee.id}">Edit</a>
+                <br/>
+                <a href="/file-upload?employeeId=${employee.id}">Upload Image</a>
+            </div>
+        </div>
+
     </div>
 
 </section>

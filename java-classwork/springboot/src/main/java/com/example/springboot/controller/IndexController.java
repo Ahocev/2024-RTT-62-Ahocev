@@ -9,9 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 @Slf4j
@@ -92,6 +97,46 @@ public class IndexController {
         response.addObject("employees", employees);
 
         return response;
+
+    }
+
+    @GetMapping("/file-upload")
+    public ModelAndView fileUpload(@RequestParam Integer employeeId){
+
+        ModelAndView response = new ModelAndView("file-upload");
+
+        response.addObject("employeeId", employeeId);
+
+        return response;
+
+    }
+
+    @PostMapping("/file-upload")
+    public ModelAndView fileUploadSubmit(@RequestParam MultipartFile file, @RequestParam Integer employeeId){
+
+        ModelAndView modelAndView = new ModelAndView("redirect:/employee/detail?employeeId=" + employeeId);
+
+        log.debug(file.getOriginalFilename());
+        log.debug("The file size is: " + file.getSize());
+        log.debug(file.getContentType());
+
+        String savedFilename = "./src/main/webapp/pub/images/" + file.getOriginalFilename();
+
+        // will need to import s3 bucket library in order to pass it via Paths.get on production webapps
+        try {
+            Files.copy(file.getInputStream(), Paths.get(savedFilename), StandardCopyOption.REPLACE_EXISTING);
+        } catch ( Exception e ) {
+            log.error("Unable to finish reading file", e);
+        }
+
+        Employee employee = employeeDAO.findById(employeeId);
+
+        String url = "/pub/images/" + file.getOriginalFilename();
+        employee.setProfileImageUrl(url);
+
+        employeeDAO.save(employee);
+
+        return modelAndView;
 
     }
 

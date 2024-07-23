@@ -101,7 +101,7 @@ public class EmployeeController {
 
 // repo commit test
 
-    @PostMapping("/createSubmit")
+    @GetMapping("/createSubmit")
     public ModelAndView creatSubmit(@Valid CreateEmployeeFormBean form, BindingResult bindingResult) {
         ModelAndView response = new ModelAndView();
 
