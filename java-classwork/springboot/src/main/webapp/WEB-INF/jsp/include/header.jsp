@@ -34,6 +34,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/customer/create">Create Customer</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/account/create-account">Create Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/account/login">Login</a>
+                    </li>
                     </li>
                     </li>
                     <li class="nav-item">

@@ -7,6 +7,7 @@ import com.example.springboot.database.entity.Customer;
 import com.example.springboot.database.entity.Employee;
 import com.example.springboot.database.entity.Office;
 import com.example.springboot.form.CreateEmployeeFormBean;
+import com.example.springboot.service.EmployeeService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,6 +35,9 @@ public class EmployeeController {
 
     @Autowired
     private OfficeDAO officeDao;  // Add this line to include OfficeDAO
+
+    @Autowired
+    private EmployeeService employeeService;
 
     @GetMapping("/detail")
     public ModelAndView detail(@RequestParam Integer employeeId) {
@@ -129,31 +132,12 @@ public class EmployeeController {
 
         } else {
 
-            log.debug(form.toString());
-
-            Employee employee = employeeDao.findById(form.getEmployeeId());
-            if (employee == null) {
-                employee = new Employee();
-            }
-
-            employee.setEmail(form.getEmail());
-            employee.setFirstName(form.getFirstName());
-            employee.setLastName(form.getLastName());
-            employee.setReportsTo(form.getReportsTo());
-            employee.setExtension(form.getExtension());
-            employee.setVacationHours(form.getVacationHours());
-            employee.setProfileImageUrl(form.getProfileImageUrl());
-            employee.setJobTitle(form.getJobTitle());
-
-            Office office = officeDao.findById((form.getOfficeId()));
-
-            employee.setOffice(office);
-
-            employee = employeeDao.save(employee);
+            Employee employee = employeeService.createEmployee(form);
 
             response.setViewName("redirect:/employee/detail?employeeId=" + employee.getId());
 
             return response;
+
         }
 
     }
