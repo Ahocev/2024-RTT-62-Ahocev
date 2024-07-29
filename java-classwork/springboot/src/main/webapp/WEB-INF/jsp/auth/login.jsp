@@ -10,12 +10,11 @@
     </div>
 </section>
 
-
 <section>
     <div class="container">
         <div class="row pt-5">
             <div class="col-12">
-                <form action="/account/login" method="post">
+                <form action="/account/loginProcessingURL" method="post">
 
                     <!-- email input -->
                     <div class="row align-items-center justify-content-center">
@@ -23,7 +22,7 @@
                             <label for="emailId" class="col-form-label">Email</label>
                         </div>
                         <div class="col-6">
-                            <input type="text" id="emailId" name="email"
+                            <input type="text" id="emailId" name="username"
                                    class="form-control <c:if test="${bindingResult.hasFieldErrors('email')}">is-invalid</c:if>"
                                    value="${form.email}">
                         </div>

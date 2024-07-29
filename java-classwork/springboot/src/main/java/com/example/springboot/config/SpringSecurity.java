@@ -22,6 +22,10 @@ public class SpringSecurity {
                         new AntPathRequestMatcher("/user/**")).authenticated()
                 .anyRequest().permitAll();
 
+        http.formLogin(formLogin -> formLogin
+                .loginPage("/account/login")
+                .loginProcessingUrl("/account/loginProcessingURL"));
+
         return http.build();
     }
 

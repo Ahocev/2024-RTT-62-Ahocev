@@ -35,10 +35,28 @@ public class LoginController {
         return response;
     }
 
-    @PostMapping("/login")
+    @GetMapping("/login")
     public ModelAndView login() {
         log.debug("login");
         ModelAndView response = new ModelAndView("auth/login");
+
+        return response;
+    }
+
+    @PostMapping("/login")
+    public ModelAndView loginSubmit(@Valid CreateAccountFormBean form, BindingResult bindingResult) {
+        log.debug("login");
+        ModelAndView response = new ModelAndView("auth/login");
+
+        if (bindingResult.hasErrors()) {
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                log.debug("Validation error : " + ((FieldError) error).getField() + " = " + error.getDefaultMessage());
+            }
+
+            response.addObject("bindingResult", bindingResult);
+            response.addObject("form", form);
+
+        }
 
         return response;
     }
