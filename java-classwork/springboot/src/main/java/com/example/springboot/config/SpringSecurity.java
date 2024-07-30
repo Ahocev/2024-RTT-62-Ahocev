@@ -21,17 +21,17 @@ public class SpringSecurity {
         http.authorizeRequests()
                 .requestMatchers(
                         new AntPathRequestMatcher("/admin/**"),
-                        new AntPathRequestMatcher("/user/**")).authenticated()
+                        new AntPathRequestMatcher("/employee/**")).authenticated()
                 .anyRequest().permitAll();
 
         http.formLogin(formLogin -> formLogin
                 .loginPage("/account/login")
                 .loginProcessingUrl("/account/loginProcessingURL"));
 
-//        http.logout(formLogout -> formLogout
-//                .invalidateHttpSession(true)
-//                .
-//        )
+        http.logout(formLogout -> formLogout
+                .invalidateHttpSession(true)
+                .logoutUrl("/account/logout")
+                .logoutSuccessUrl("/"));
 
         return http.build();
     }
