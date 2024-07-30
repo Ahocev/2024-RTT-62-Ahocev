@@ -39,7 +39,9 @@ public class AuthenticatedUserUtilities {
         if (username == null) {
             return null;
         }
+
         return userDAO.findByEmailIgnoreCase(username);
+
     }
 
 }
