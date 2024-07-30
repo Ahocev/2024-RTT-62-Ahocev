@@ -38,12 +38,12 @@
                         <a class="nav-link" href="/customer/create">Create Customer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/account/create-account">Create Account</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/file-upload">File Upload</a>
                     </li>
                     <sec:authorize access="!isAuthenticated()">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/account/create-account">Create Account</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/account/login">Login</a>
                         </li>
@@ -53,10 +53,7 @@
                             <a class="nav-link" href="/account/logout">Logout</a>
                         </li>
                         <li class="nav-item">
-                            <span class="nav-link">Logged in as: </span>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-link"><sec:authentication property="name"/></span>
+                            <span class="nav-link">Logged in as: <sec:authentication property="name"/></span>
                         </li>
                     </sec:authorize>
                     <sec:authorize access="hasAnyAuthority('ADMIN')">
